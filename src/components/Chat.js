@@ -5,7 +5,8 @@ import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined"
 import InforOutlinedIcon from "@material-ui/icons/InfoOutlined"
 import { db } from '../firebase'
 import Message from './Message'
-const Chat = () => {
+import ChatInput from './ChatInput'
+const Chat = ({user}) => {
     const {roomId} = useParams()
     const [roomDetails,setRoomDetails] = useState(null)
     const [roomMessages,setRoomMessages] = useState([])
@@ -58,6 +59,7 @@ const Chat = () => {
                 ))}
 
             </div>
+            <ChatInput user={user} channelName={roomDetails?.name} channelId={roomId} />
         </div>
     )
 }

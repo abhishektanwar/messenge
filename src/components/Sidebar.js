@@ -16,7 +16,7 @@ import AddIcon from "@material-ui/icons/Add"
 import { db } from '../firebase'
 
 
-const Sidebar = () => {
+const Sidebar = ({user}) => {
     const [channels,setChannels] = useState([])
 
     useEffect(()=>{
@@ -34,10 +34,10 @@ const Sidebar = () => {
         <div className="sidebar">
             <div className="sidebarHeader">
                 <div className="sidebarInfo">
-                    <h2>Channel Name</h2>
+                    <h2>React Live Coding</h2>
                     <h3>
                         <FiberManualRecordIcon />
-                        Abhishek
+                        {user?.displayName}
                     </h3>
                 </div>
                 <CreateIcon />

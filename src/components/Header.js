@@ -6,7 +6,7 @@ import SearchIcon from "@material-ui/icons/Search"
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline"
 import { Help } from '@material-ui/icons'
 
-const Header = () => {
+const Header = ({user}) => {
     return (
         <div className="header">
             <div className="headerLeft">
@@ -14,8 +14,8 @@ const Header = () => {
                 {/* {time icon} */}
                 <Avatar 
                     className="headerAvatar"
-                    alt="abhishek"
-                    src="image"
+                    alt={user?.displayName}
+                    src={user?.photoURL}
                 />
                 <AccessTimeIcon />
             </div>
